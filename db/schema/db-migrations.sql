@@ -14,3 +14,6 @@ CREATE TABLE IF NOT EXISTS recipes
   directions       text NOT NULL,
   notes            text
 );
+
+-- drop recipe.reference_link null requirement
+ALTER TABLE recipes alter reference_link DROP NOT NULL;
