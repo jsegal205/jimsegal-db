@@ -17,3 +17,6 @@ CREATE TABLE IF NOT EXISTS recipes
 
 -- drop recipe.reference_link null requirement
 ALTER TABLE recipes alter reference_link DROP NOT NULL;
+
+-- only allow unique values for recipes.slug
+CREATE UNIQUE INDEX IF NOT EXISTS idx_recipes_slug ON recipes(slug);
